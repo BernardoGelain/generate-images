@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+import AudioPlayer from "../components/AudioPlayer/AudioPlayer";
+import { MusicProvider } from "@/contexts/MusicContext";
 
-const geistSans = Geist({
+const geistSans = Montserrat({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = Montserrat({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -23,11 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="pt-BR">
+      <body>
+        <MusicProvider>
+          <AudioPlayer />
+          {children}
+        </MusicProvider>
       </body>
     </html>
   );
