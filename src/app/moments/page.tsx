@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { TextField, Button, CircularProgress, Container, Typography } from "@mui/material";
+import { TextField, CircularProgress, Container } from "@mui/material";
 import PhotoCarousel from "../../components/PhotoCarousel/PhotoCarousel";
 import { useRouter } from "next/navigation";
 
